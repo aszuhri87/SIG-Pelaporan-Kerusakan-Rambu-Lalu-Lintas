@@ -161,6 +161,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
+        'Intervention\Image\ImageServiceProvider',
+        Nexmo\Laravel\NexmoServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+      
+
 
         /*
          * Package Service Providers...
@@ -226,7 +233,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Image' => 'Intervention\Image\Facades\Image',
+        'Nexmo' => \Nexmo\Laravel\Facade\Nexmo::class,
+        'Input' => Illuminate\Support\Facades\Input::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

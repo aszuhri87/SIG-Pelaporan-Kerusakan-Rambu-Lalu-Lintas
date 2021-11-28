@@ -27,8 +27,25 @@
                                 <form method="POST" action="{{ route('register') }}" class="user">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                    <div class="form-group">
+                                   <!--  <div class="form-group">
                                         <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                    </div> -->
+                                      <label class="form-control-label" for="petugas">Nama Petugas</label>
+                                            <select name="nama_petugas" class="form-control">
+
+                                                @foreach ($petugas as $p)
+                                                     <option value="{{$r->id_petugas}}">{{ $p->nama_petugas}}</option>
+                                                @endforeach
+                                            </select>
+                                    </div>
+
+                                      <label class="form-control-label" for="petugas">email</label>
+                                            <select name="email" class="form-control">
+
+                                                @foreach ($petugas as $p)
+                                                     <option value="{{$r->id_petugas}}">{{ $p->email}}</option>
+                                                @endforeach
+                                            </select>
                                     </div>
 
                                     <div class="form-group">
@@ -46,6 +63,12 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                                     </div>
+
+
+                                      <div class="form-group">
+                                      <!--   <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('Jabatan') }}" required> -->
+                                     
+
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-user btn-block">

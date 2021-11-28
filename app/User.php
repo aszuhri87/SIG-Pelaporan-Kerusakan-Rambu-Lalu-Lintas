@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'last_name', 'email', 'password',
+        'name', 'last_name', 'email', 'password', 'id_petugas'
     ];
 
     /**
@@ -57,8 +57,12 @@ class User extends Authenticatable
      * @param string $value
      * @return void
      */
-    public function setPasswordAttribute($value)
+    public function setPasswordAttribute($password)
     {
-        $this->attributes['password'] = bcrypt($value);
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    public function Petugas() {
+        return $this->belongsTo('App\Petugas', 'id_petugas');
     }
 }
